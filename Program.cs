@@ -15,11 +15,14 @@ namespace GitConsole
            
             //the file is txt and is in debug folder
             //separated by comma and space
+            //cultureinfo chosen en-US
             string fileName = "AddressBook.txt";
             string[] separators = new string[1];
             separators[0] = ", ";
-
             CultureInfo ci = CultureInfo.CreateSpecificCulture("en-US");
+
+
+            string[] answers = new string[3];
 
             List<string> firstName = new List<string>();
             List<string> sex = new List<string>();
@@ -47,8 +50,16 @@ namespace GitConsole
                 sr.Close();
             }
 
-
-            string[] answers = new string[3];
+            int countMales=0;
+            for (int i = 0; i < sex.Count; i++)
+            {
+                if (sex[i].Equals("Male")) //case sensitive in file?
+                {
+                    countMales += 1;
+                }
+            }
+            answers[0] = countMales.ToString();
+            
 
             //print results
             for (int i = 0; i < answers.Length; i++)
