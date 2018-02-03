@@ -1,0 +1,5 @@
+C:\Users\Marius\Dropbox\transfer laptop\CV & jobs\git si c#\GitConsole\GitConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Marius\Dropbox\transfer laptop\CV & jobs\git si c#\GitConsole\GitConsole\bin\Debug\GitConsole.exe
+C:\Users\Marius\Dropbox\transfer laptop\CV & jobs\git si c#\GitConsole\GitConsole\bin\Debug\GitConsole.pdb
+C:\Users\Marius\Dropbox\transfer laptop\CV & jobs\git si c#\GitConsole\GitConsole\obj\Debug\GitConsole.exe
+C:\Users\Marius\Dropbox\transfer laptop\CV & jobs\git si c#\GitConsole\GitConsole\obj\Debug\GitConsole.pdb
