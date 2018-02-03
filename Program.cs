@@ -25,6 +25,7 @@ namespace GitConsole
             string[] answers = new string[3];
 
             List<string> firstName = new List<string>();
+            List<string> lastName = new List<string>();
             List<string> sex = new List<string>();
             List<DateTime> birthDate = new List<DateTime>();
 
@@ -41,7 +42,7 @@ namespace GitConsole
 
                     string[] name = el[0].Split(' ');
                     string first = name[0]; firstName.Add(first);
-                    string last = name[1];
+                    string last = name[1]; lastName.Add(last);
 
                     sex.Add(el[1]);
                     birthDate.Add(DateTime.ParseExact(el[2],"dd/MM/yy",ci));
@@ -50,6 +51,7 @@ namespace GitConsole
                 sr.Close();
             }
 
+            //q1 - number of males
             int countMales=0;
             for (int i = 0; i < sex.Count; i++)
             {
@@ -60,6 +62,19 @@ namespace GitConsole
             }
             answers[0] = countMales.ToString();
             
+
+            //q2 - oldest person
+            DateTime lowestDate = DateTime.Now;
+            string oldestPerson = "";
+            for (int i = 0; i < birthDate.Count; i++)
+            {
+                if (lowestDate > birthDate[i])
+                {
+                    lowestDate = birthDate[i];
+                    oldestPerson = firstName[i] + " " + lastName[i]; //for now we assume the indexes are the same (so the file was in correct format)
+                }
+            }
+            answers[1] = oldestPerson;
 
             //print results
             for (int i = 0; i < answers.Length; i++)
