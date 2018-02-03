@@ -76,6 +76,24 @@ namespace GitConsole
             }
             answers[1] = oldestPerson;
 
+            //q3 - days older B > P
+            int Bill_index = 0;
+            int Paul_index = 0;
+            for (int i = 0; i < firstName.Count; i++) //for now we assume the indexes are the same (so the file was in correct format)
+            {
+                if (firstName[i].Equals("Paul"))//case sensitive in file?
+                {
+                    Paul_index = i;
+                }
+                if (firstName[i].Equals("Bill"))//case sensitive in file?
+                {
+                    Bill_index = i;
+                }
+            }
+            TimeSpan dif = birthDate[Paul_index] - birthDate[Bill_index];
+            answers[2] = dif.TotalDays.ToString();
+
+
             //print results
             for (int i = 0; i < answers.Length; i++)
             {
