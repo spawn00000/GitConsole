@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Globalization;
 
 namespace GitConsole
 {
@@ -18,8 +19,11 @@ namespace GitConsole
             string[] separators = new string[1];
             separators[0] = ", ";
 
-            List<string> firstName = new List<string>();
+            CultureInfo ci = CultureInfo.CreateSpecificCulture("en-US");
 
+            List<string> firstName = new List<string>();
+            List<string> sex = new List<string>();
+            List<DateTime> birthDate = new List<DateTime>();
 
             //read from file 
             using (StreamReader sr = new StreamReader(fileName))
@@ -36,6 +40,9 @@ namespace GitConsole
                     string first = name[0]; firstName.Add(first);
                     string last = name[1];
 
+                    sex.Add(el[1]);
+                    birthDate.Add(DateTime.ParseExact(el[2],"dd/MM/yy",ci));
+                    
                 }
                 sr.Close();
             }
